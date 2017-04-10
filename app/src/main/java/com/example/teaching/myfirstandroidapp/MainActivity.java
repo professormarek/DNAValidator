@@ -2,8 +2,10 @@ package com.example.teaching.myfirstandroidapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,5 +49,16 @@ public class MainActivity extends AppCompatActivity {
     private void validateSequence(){
         //a Toast is a way to display a short, non-interactive message to your users
         Toast.makeText(this, "Button was clicked!", Toast.LENGTH_LONG).show();
+
+        //get the text out of the EditText box
+        EditText myTextBox = (EditText) findViewById(R.id.editText);
+        String userEnteredText = myTextBox.getText().toString();
+        System.out.println("DEBUG: User trying to validate "+ userEnteredText);
+        //"proper" way to debug in android:
+        Log.d("DEBUG", "User trying to validate "+ userEnteredText);
+
+        //TODO: validate the sequence - display result using toast
+        Toast.makeText(this, "ENTER ANSWER HERE!", Toast.LENGTH_LONG).show();
+
     }
 }
